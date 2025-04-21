@@ -31,8 +31,7 @@ const AboutPage = () => {
           About Me
         </Heading>
         <Text>
-        Hello! I&apos;m Beatrice Egid, currently a post-doc at the <Link href="https://www.lstmed.ac.uk/" color='blue'>
-          Liverpool School of Tropical Medicine</Link>
+        Hello! I&apos;m Beatrice Egid, currently a consultant :)
         </Text>
         <Text>
         To date, my work has primarily focused on mosquito vectors of disease. In particular, the rapid evolution and spread of resistance 
