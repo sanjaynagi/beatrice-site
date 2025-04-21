@@ -10,7 +10,6 @@ const MainLayout = ({ children }) => {
   return (
     <Box as="main" pb={8}>
       <Navbar />
-      {/* <Sidebar /> */}
       <Container
         maxW="container.md"
         minH={{ base: 'auto', md: '100vh' }}
