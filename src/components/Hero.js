@@ -26,14 +26,14 @@ const Hero = () => {
           {isMobile ? (
             <VStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                Hey, I&apos;m Beatrice
+                Guten Tag!, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
             </VStack>  
           ) : (
             <HStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                 Hey, I&apos;m Beatrice
+               Guten Tag!, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
              </HStack>  
