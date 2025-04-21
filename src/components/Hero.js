@@ -41,7 +41,7 @@ const Hero = () => {
           }
           </Stack>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            I&apos;m a cool dude
+            I&apos;m a cool dude, but Sanjay is the best! 
           </Text>
           <Text lineHeight="175%" as="h2" fontSize="lg">
           Curabitur consequat venenatis iaculis. Vestibulum ornare erat in venenatis eleifend. Donec dignissim ex sit amet neque dictum luctus.

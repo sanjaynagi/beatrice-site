@@ -8,7 +8,7 @@ const HeroImage = () => {
         <Box rounded="full" overflow="hidden" borderRadius={20}>
           <Image
             src="/avatar.jpg"
-            width={335}
+            width={260}
             height={251.25}
             alt="Avatar Image"
           />
