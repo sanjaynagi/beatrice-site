@@ -44,7 +44,10 @@ const Hero = () => {
             I&apos;m a cool dude
           </Text>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            A major focus of my research is ...
+          Curabitur consequat venenatis iaculis. Vestibulum ornare erat in venenatis eleifend. Donec dignissim ex sit amet neque dictum luctus.
+          Nullam non lacus pretium, ornare ligula scelerisque, iaculis est. Integer nec sollicitudin dolor. Mauris eget sapien quam. Nunc porta 
+          justo sit amet nulla sodales lobortis a eu sem. Sed tristique, ligula nec vulputate pellentesque, tortor augue porta ante, finibus hendrerit
+          quam tortor vitae sapien. Fusce non aliquam diam. In quis varius metus. Proin accumsan ullamcorper lectus, a ullamcorper nisl ullamcorper quis.
           </Text>
         </VStack>
       </Stack>
