@@ -26,14 +26,14 @@ const Hero = () => {
           {isMobile ? (
             <VStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                Hey, I&apos;m Sanjay
+                Hey, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
             </VStack>  
           ) : (
             <HStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                 Hey, I&apos;m Sanjay
+                 Hey, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
              </HStack>  
@@ -41,15 +41,10 @@ const Hero = () => {
           }
           </Stack>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            I&apos;m a Post-Doc studying genomics of the major malaria mosquito, <em>Anopheles gambiae </em> 
-            at the Liverpool School of Tropical Medicine. 
+            I&apos;m a cool dude
           </Text>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            A major focus of my research is the rapid evolution and spread of resistance 
-            in the major malaria vector, and how we can use population genomics to 
-            ultimately inform malaria control programmes. I enjoy developing open-source 
-            computational tools that can aid the community and empower researchers to analyse 
-            their own data.
+            A major focus of my research is ...
           </Text>
         </VStack>
       </Stack>

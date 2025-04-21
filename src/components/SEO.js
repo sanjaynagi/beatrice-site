@@ -31,7 +31,7 @@ const DocumentHead = ({ pageTitle, postPath, canonicalUrl }) => {
       <meta name="publisher" content={author} />
       <meta
         name="keywords"
-        content="Beatrice Egid, beatriceegid, genomics, malaria, blog, Next.js, React"
+        content="Beatrice Egid, beatriceegid, equity, global health, blog"
       />
 
       <meta name="robots" content="index,follow" />
@@ -54,7 +54,7 @@ const DocumentHead = ({ pageTitle, postPath, canonicalUrl }) => {
 
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="twitter:site" content={shortname} />
-      <meta name="twitter:title" content="Sanjay C Nagi's personal website" />
+      <meta name="twitter:title" content="Beatrice Egid's personal website" />
       <meta name="twitter:description" content={description} />
       <meta property="twitter:image" content={`${siteURL}${socialBanner}`} />
     </Head>

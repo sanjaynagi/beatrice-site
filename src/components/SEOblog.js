@@ -22,8 +22,8 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <link rel="icon" href="/favicon.ico" />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta content="#5fb0a1" name="theme-color" />
-      <meta content="#5fb0a1" name="msapplication-TileColor" />
+      <meta content="#5366d4" name="theme-color" />
+      <meta content="#5366d4" name="msapplication-TileColor" />
       <link rel="canonical" href={canonicalUrl} />
 
       <link rel="apple-touch-icon" href="/favicon.ico" />
