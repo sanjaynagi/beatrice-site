@@ -4,7 +4,6 @@ import Hero from './Hero';
 import EmailLink from './EmailLink';
 import InternalLink from './InternalLink';
 import ContactMe from './ContactMe';
-import SoftwareSectionList from './SoftwareSectionList';
 import ThemeToggleButton from './ThemeToggleButton';
 import BlogPostCard from './BlogPostCard';
 import MDXComponents from './MDXComponents';
@@ -19,7 +18,6 @@ export {
   Fonts,
   InternalLink,
   Hero,
-  SoftwareSectionList,
   EmailLink,
   ContactMe,
   ThemeToggleButton,

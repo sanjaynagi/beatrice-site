@@ -35,8 +35,6 @@ const HomePage = ({ posts }) => {
       <Hero />
       {/* Latest Blog Posts */}
       <LatestPostsSection posts={posts} />
-      {/* Open Source Projects I've Worked on */}
-      {/* <SoftwareSectionList projects={SoftwareList} /> */}
       <ContactMe />
     </>
   );
