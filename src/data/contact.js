@@ -12,7 +12,7 @@ const data = [
     icon: faGithub,
   },
   {
-    link: 'https://www.linkedin.com/in/sanjaycnagi',
+    link: 'https://www.linkedin.com/in/beatriceegid',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },

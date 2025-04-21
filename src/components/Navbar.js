@@ -46,7 +46,7 @@ const Navbar = props => {
                 backgroundSize: '800%'
               }}
             >
-              Sanjay Curtis Nagi
+              Beatrice Egid
             </Text>
           </InternalLink>
         </Flex>

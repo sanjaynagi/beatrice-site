@@ -31,8 +31,8 @@ const AboutPage = () => {
           About Me
         </Heading>
         <Text>
-        Hello! I&apos;m Sanjay Curtis Nagi, currently a post-doc at the <Link href="https://www.lstmed.ac.uk/" color='teal'>
-          Liverpool School of Tropical Medicine</Link> in the Vector Informatics and Genomics group. 
+        Hello! I&apos;m Beatrice Egid, currently a post-doc at the <Link href="https://www.lstmed.ac.uk/" color='blue'>
+          Liverpool School of Tropical Medicine</Link>
         </Text>
         <Text>
         To date, my work has primarily focused on mosquito vectors of disease. In particular, the rapid evolution and spread of resistance 
@@ -44,8 +44,8 @@ const AboutPage = () => {
 
         <InterestsList></InterestsList>
         
-        <Text>Feel free to explore some of the <InternalLink href="/software" color="teal" p="0">software tools</InternalLink> I&apos;ve developed, 
-        or <InternalLink href="/publications" color="teal" p="0">publications</InternalLink> I&apos;ve contributed to.
+        <Text>Feel free to explore some of the <InternalLink href="/software" color="blue" p="0">software tools</InternalLink> I&apos;ve developed, 
+        or <InternalLink href="/publications" color="blue" p="0">publications</InternalLink> I&apos;ve contributed to.
         </Text>
         <Image src="/runningmalawismall.png" alt="Running through an irrigation system in the Shire Valley, Chikwawa, Malawi." />
         <ContactMe />

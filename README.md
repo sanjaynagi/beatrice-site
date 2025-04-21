@@ -1,6 +1,6 @@
-## sanjaycnagi.com
+## beatriceegid.com
 
-A [personal website](https://sanjaycnagi.com/) where I keep:
+A [personal website](https://beatriceegid.com/) where I keep:
 
 - information about myself
 - blog posts

@@ -40,7 +40,7 @@ MainLayout.defaultProps = {
   children: null,
   fullPage: false,
   title: null,
-  description: "Sanjay Curtis Nagi's personal website.",
+  description: "Beatrice Egid's personal website.",
 };
 
 export default MainLayout;

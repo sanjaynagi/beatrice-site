@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Heading, Text, VStack, List, ListItem } from '@chakra-ui/react';
-import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 
 import { BlogPostCard, DocumentHead } from '../../src/components';
 
-// Fetch all posts
+// Fetch all posts - only called in getStaticProps (server-side)
 export const getAllBlogPosts = async () => {
+  // Only import fs in server-side code
+  const fs = await import('fs').then(mod => mod.promises);
+  
   const result = [];
   const dir = path.join(process.cwd(), './content/posts');
   const blogPosts = await fs.readdir(dir);
@@ -41,30 +43,20 @@ export const getAllBlogPosts = async () => {
   return result.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 };
 
+// This function only runs on the server at build time
 export const getStaticProps = async () => {
   const posts = await getAllBlogPosts();
-  const props = {
-    posts
-  };
-
+  
   return {
-    props
+    props: {
+      posts
+    }
   };
 };
 
+// This component runs on the client
 const Blog = ({ posts }) => {
   const [displayPosts, setDisplayPosts] = useState(posts);
-
-  // const onSearch = () => {
-  //   console.log(event);
-  //   const query = event.currentTarget.value;
-
-  //   const filteredPosts = posts.filter(post =>
-  //     post.title.toLowerCase().includes(query)
-  //   );
-
-  //   setDisplayPosts(filteredPosts);
-  // };
 
   return (
     <>
@@ -77,21 +69,6 @@ const Blog = ({ posts }) => {
           Recent blog posts. I write about vector control, genomic surveillance and bioinformatics, and sometimes 
           my favourite food, paranthas. 
         </Text>
-        {/* <Text fontSize="xl">
-          In total I&#39;ve written <strong>{Object.keys(posts).length}</strong>{' '}
-          tutorials and posts.
-        </Text> */}
-        {/* <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <Icon as={HiOutlineSearch} color="gray.400" />
-          </InputLeftElement>
-          <Input
-            placeholder="Search a post by title, or topic..."
-            variant="filled"
-            onChange={onSearch}
-          />
-        </InputGroup> */}
-        {/* Common Tags cloud */}
       </VStack>
       <List spacing={1} w="full">
         {displayPosts.map(post => (

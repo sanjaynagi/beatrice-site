@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
 const HomePage = ({ posts }) => {
   return (
     <>
-      <DocumentHead pageTitle="Sanjay Curtis Nagi" />
+      <DocumentHead pageTitle="Beatrice Egid" />
       <Hero />
       {/* Latest Blog Posts */}
       <LatestPostsSection posts={posts} />
