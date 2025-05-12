@@ -5,6 +5,7 @@ const withMDX = require('@next/mdx')()
 nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  swcMinify: false,
   images: {
     domains: ['i.imgur.com', 'res.cloudinary.com', 'i.gr-assets.com', 'cdn-images-1.medium.com', 'miro.medium.com', 'blog.jscrambler.com', 'crowdbotics.ghost.io',
     'img.youtube.com', 'blog.logrocket.com', 'hackernoon.com', 'imgur.com', 'blog.appsignal.com', 'hackernoon.imgix.net', 'appjs.co', 'pbs.twimg.com', '2022.appjs.co'],

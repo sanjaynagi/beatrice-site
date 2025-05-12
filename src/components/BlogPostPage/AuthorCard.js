@@ -20,8 +20,8 @@ const AuthorCard = () => {
         <VStack alignItems="stretch" as="section" pt={2}>
           <HStack justifyContent="space-between">
             <Text fontSize="md" fontWeight="600" color={textMode}>
-              <Link href="/about">Sanjay Curtis Nagi</Link>{' '}
-              <Text fontSize="sm" color="teal.500" as="i">
+              <Link href="/about">Beatrice Egid</Link>{' '}
+              <Text fontSize="sm" color="blue.500" as="i">
                 author
               </Text>
             </Text>
@@ -32,15 +32,15 @@ const AuthorCard = () => {
                 alignItems="center"
                 border="1px solid #805AD5"
               > */}
-              <Link isExternal href="https://ko-fi.com/sanjaycnagi">
-                <Text fontSize="13px" color="teal.500" fontWeight="bold">
+              <Link isExternal href="https://ko-fi.com/beatriceegid">
+                <Text fontSize="13px" color="blue.500" fontWeight="bold">
                   Buy me coffee
                 </Text>
               </Link>
               {/* </Box> */}
               <Box>&nbsp;</Box>
-              <Link isExternal href="https://sanjaycnagi.substack.com/">
-                <Text fontSize="13px" color="teal.500" fontWeight="bold">
+              <Link isExternal href="https://beatriceegid.substack.com/">
+                <Text fontSize="13px" color="blue.500" fontWeight="bold">
                   Newsletter
                 </Text>
               </Link>
@@ -52,8 +52,8 @@ const AuthorCard = () => {
                 alignItems="center"
                 border="1px solid #805AD5"
               > */}
-              <Link isExternal href="https://twitter.com/sanjaycnagi">
-                <Text fontSize="13px" color="teal.500" fontWeight="bold">
+              <Link isExternal href="https://twitter.com/beatriceegid">
+                <Text fontSize="13px" color="blue.500" fontWeight="bold">
                   Twitter
                 </Text>
               </Link>

@@ -1,8 +1,8 @@
 {
-  "name": "sanjaycnagi-personal-site",
+  "name": "beatriceegid-personal-site",
   "description": "Personal website running on Next.js and Chakra UI.",
   "version": "9.9.26",
-  "author": "Sanjay Curtis Nagi <sanjay.c.nagi@gmail.com>",
+  "author": "Beatrice Egid <sanjay.c.nagi@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",

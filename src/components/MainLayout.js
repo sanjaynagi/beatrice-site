@@ -10,7 +10,6 @@ const MainLayout = ({ children }) => {
   return (
     <Box as="main" pb={8}>
       <Navbar />
-      {/* <Sidebar /> */}
       <Container
         maxW="container.md"
         minH={{ base: 'auto', md: '100vh' }}
@@ -40,7 +39,7 @@ MainLayout.defaultProps = {
   children: null,
   fullPage: false,
   title: null,
-  description: "Sanjay Curtis Nagi's personal website.",
+  description: "Beatrice Egid's personal website.",
 };
 
 export default MainLayout;

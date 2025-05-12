@@ -1,6 +1,6 @@
 ---
-title: "Ultra user-friendly bioinformatics pipelines pt.1"
-shorttitle: "Ultra user-friendly bioinformatics pipelines pt.1"
+title: Interesting blog post 2
+shorttitle: Interesting blog post 2
 slug: "Ultra-user-friendly-bioinformatics-pipelines-pt1"
 date: 06/25/2023
 thumbnail: '/thumbnails/jb.png'

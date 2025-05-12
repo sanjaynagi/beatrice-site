@@ -26,14 +26,14 @@ const Hero = () => {
           {isMobile ? (
             <VStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                Hey, I&apos;m Sanjay
+                Guten Tag!, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
             </VStack>  
           ) : (
             <HStack width="100%" justifyContent={'space-between'}>
               <Heading size="lg" as="h1">
-                 Hey, I&apos;m Sanjay
+               Guten Tag!, I&apos;m Beatrice
               </Heading>     
               <HeroImage />
              </HStack>  
@@ -41,15 +41,13 @@ const Hero = () => {
           }
           </Stack>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            I&apos;m a Post-Doc studying genomics of the major malaria mosquito, <em>Anopheles gambiae </em> 
-            at the Liverpool School of Tropical Medicine. 
+            I&apos;m a cool dude, but Sanjay is the best! 
           </Text>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            A major focus of my research is the rapid evolution and spread of resistance 
-            in the major malaria vector, and how we can use population genomics to 
-            ultimately inform malaria control programmes. I enjoy developing open-source 
-            computational tools that can aid the community and empower researchers to analyse 
-            their own data.
+          Curabitur consequat venenatis iaculis. Vestibulum ornare erat in venenatis eleifend. Donec dignissim ex sit amet neque dictum luctus.
+          Nullam non lacus pretium, ornare ligula scelerisque, iaculis est. Integer nec sollicitudin dolor. Mauris eget sapien quam. Nunc porta 
+          justo sit amet nulla sodales lobortis a eu sem. Sed tristique, ligula nec vulputate pellentesque, tortor augue porta ante, finibus hendrerit
+          quam tortor vitae sapien. Fusce non aliquam diam. In quis varius metus. Proin accumsan ullamcorper lectus, a ullamcorper nisl ullamcorper quis.
           </Text>
         </VStack>
       </Stack>

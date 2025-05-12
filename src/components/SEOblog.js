@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
-const siteURL = 'https://sanjaycnagi.com';
-const author = 'Sanjay Curtis Nagi';
-const shortname = 'sanjaycnagi';
+const siteURL = 'https://beatriceegid.com';
+const author = 'Beatrice Egid';
+const shortname = 'beatriceegid';
 const description =
-  "I'm Sanjay Curtis Nagi. Researcher. Welcome to my blog!";
+  "I'm Beatrice Egid. Researcher. Welcome to my blog!";
 const socialBanner = '/card.png';
 
 const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shorttitle }) => {
@@ -22,8 +22,8 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <link rel="icon" href="/favicon.ico" />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta content="#5fb0a1" name="theme-color" />
-      <meta content="#5fb0a1" name="msapplication-TileColor" />
+      <meta content="#5366d4" name="theme-color" />
+      <meta content="#5366d4" name="msapplication-TileColor" />
       <link rel="canonical" href={canonicalUrl} />
 
       <link rel="apple-touch-icon" href="/favicon.ico" />
@@ -33,7 +33,7 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <meta name="publisher" content={author} />
       <meta
         name="keywords"
-        content="Sanjay Curtis Nagi, sanjaycnagi, genomics, malaria, blog, Next.js, React"
+        content="Beatrice Egid, beatriceegid, genomics, malaria, blog, Next.js, React"
       />
 
       <meta name="robots" content="index,follow" />

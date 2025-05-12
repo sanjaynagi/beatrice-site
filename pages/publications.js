@@ -21,10 +21,10 @@ const PublicationsPage = () => {
          Publications
         </Heading>
           <ButtonGroup spacing={4}>
-            <Button leftIcon={<FaGoogle/>} colorScheme='teal' size='lg' variant='ghost'> 
+            <Button leftIcon={<FaGoogle/>} colorScheme='blue' size='lg' variant='ghost'> 
              <Link href="https://scholar.google.com/citations?user=P-ImwEcAAAAJ&hl=en&oi=ao">Google Scholar</Link>
            </Button>
-           <Button leftIcon={<FaOrcid/>} colorScheme='teal' size='lg' variant='ghost'> 
+           <Button leftIcon={<FaOrcid/>} colorScheme='blue' size='lg' variant='ghost'> 
               <Link href="https://orcid.org/0000-0003-1214-8523">Orcid</Link>
            </Button>
           </ButtonGroup>

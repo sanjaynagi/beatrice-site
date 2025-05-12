@@ -40,13 +40,13 @@ const Navbar = props => {
               fontWeight={{ base: '0', md: '600' }}
               sx={{
                 background:
-                  'linear-gradient(45deg, #00E1B0, #5c5e5b 30%, #ffffff 60%)',
+                  'linear-gradient(45deg, #3882d6, #5c5e5b 30%, #ffffff 60%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '800%'
               }}
             >
-              Sanjay Curtis Nagi
+              Beatrice R Egid
             </Text>
           </InternalLink>
         </Flex>
@@ -65,7 +65,6 @@ const Navbar = props => {
             <InternalLink href="/about" fontSize="sm">About</InternalLink>
             <InternalLink href="/blog" fontSize="sm">Blog</InternalLink>
             <InternalLink href="/publications" fontSize="sm">Publications</InternalLink>
-            <InternalLink href="/software" fontSize="sm">Software</InternalLink>
           </Stack>
         ) : (
           <Stack
@@ -81,7 +80,6 @@ const Navbar = props => {
             <InternalLink href="/blog">Blog</InternalLink>
             <InternalLink href="/cv">CV</InternalLink>
             <InternalLink href="/publications">Publications</InternalLink>
-            <InternalLink href="/software">Software</InternalLink>
           </Stack>
         )}
         <Box flex={1} align="right" >
