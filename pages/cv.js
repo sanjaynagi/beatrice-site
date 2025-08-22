@@ -17,8 +17,8 @@ const CvPage = () => {
         <Heading size="lg">
          Curriculum Vitae
         </Heading>
-          <Button leftIcon={<FaDownload />} colorScheme='teal' size='lg' variant='ghost'> 
-            <Link href="/SanjayCNagi-CV-2024.pdf">Download CV</Link>
+          <Button leftIcon={<FaDownload />} colorScheme='green.800' size='lg' variant='ghost'> 
+            <Link href="/beatriceegid-CV-2024.pdf">Download CV</Link>
           </Button>
 
         <PdfViewer />

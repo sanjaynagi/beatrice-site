@@ -29,28 +29,28 @@ const Navbar = props => {
         p={2}
         maxW="container.lg"
         wrap="wrap"
-        as='nav'
+        as="nav"
         align="center"
         justify="space-between"
       >
-        <Flex align="center">
-            <InternalLink href="/" height="%50">
+        {/* Adjust Flex alignment and add margin */}
+        <Flex align="center" ml={{ base: 2, md: 8 }}>
+          <InternalLink href="/" height="%50">
             <Text
-              fontSize={{ base: '0px', md: '18px' }}
+              fontSize={{ base: '0px', md: '22px' }}
               fontWeight={{ base: '0', md: '600' }}
               sx={{
                 background:
-                  'linear-gradient(45deg, #00E1B0, #5c5e5b 30%, #ffffff 60%)',
+                  'linear-gradient(45deg, #124a28, #bcd3b1ff 30%, #ffffff 60%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '800%'
+                backgroundSize: '800%',
               }}
             >
-              Sanjay Curtis Nagi
+              Beatrice R Egid
             </Text>
           </InternalLink>
         </Flex>
-
 
         {isMobile ? (
           <Stack
@@ -60,12 +60,16 @@ const Navbar = props => {
             alignItems="center"
             flexGrow={1}
             mt={{ base: 4, md: 0 }}
-
           >
-            <InternalLink href="/about" fontSize="sm">About</InternalLink>
-            <InternalLink href="/blog" fontSize="sm">Blog</InternalLink>
-            <InternalLink href="/publications" fontSize="sm">Publications</InternalLink>
-            <InternalLink href="/software" fontSize="sm">Software</InternalLink>
+            <InternalLink href="/about" fontSize="md">
+              About
+            </InternalLink>
+            <InternalLink href="/blog" fontSize="md">
+              Blog
+            </InternalLink>
+            <InternalLink href="/publications" fontSize="md">
+              Publications
+            </InternalLink>
           </Stack>
         ) : (
           <Stack
@@ -75,16 +79,16 @@ const Navbar = props => {
             alignItems="center"
             flexGrow={1}
             mt={{ base: 4, md: 0 }}
-          >     
-            <Divider orientation='vertical' ml="3"/>       
+          >
+            <Divider orientation="vertical" ml="3" />
             <InternalLink href="/about">About</InternalLink>
             <InternalLink href="/blog">Blog</InternalLink>
             <InternalLink href="/cv">CV</InternalLink>
             <InternalLink href="/publications">Publications</InternalLink>
-            <InternalLink href="/software">Software</InternalLink>
           </Stack>
         )}
-        <Box flex={1} align="right" >
+        {/* Adjust Box alignment */}
+        <Box flex={1} align="right" mr={{ base: 2, md: 4 }}>
           <ThemeToggleButton />
         </Box>
       </Container>

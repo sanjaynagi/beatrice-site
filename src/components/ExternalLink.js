@@ -5,7 +5,7 @@ const ExternalLink = ({ children, ...linkProps }) => {
     <span>
       <Link
         {...linkProps}
-        color={mode('teal.500', 'teal.300')}
+        color={mode('green.800', 'green.300')}
         display="inline-flex"
         alignItems="center"
         isExternal

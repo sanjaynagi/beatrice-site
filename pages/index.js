@@ -31,12 +31,11 @@ export const getStaticProps = async () => {
 const HomePage = ({ posts }) => {
   return (
     <>
-      <DocumentHead pageTitle="Sanjay Curtis Nagi" />
+      <DocumentHead pageTitle="Beatrice R Egid" />
       <Hero />
       {/* Latest Blog Posts */}
       <LatestPostsSection posts={posts} />
       {/* Open Source Projects I've Worked on */}
-      {/* <SoftwareSectionList projects={SoftwareList} /> */}
       <ContactMe />
     </>
   );

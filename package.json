@@ -1,8 +1,8 @@
 {
-  "name": "sanjaycnagi-personal-site",
+  "name": "beatriceegid-personal-site",
   "description": "Personal website running on Next.js and Chakra UI.",
   "version": "9.9.26",
-  "author": "Sanjay Curtis Nagi <sanjay.c.nagi@gmail.com>",
+  "author": "Beatrice R Egid <sanjay.c.nagi@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -39,7 +39,8 @@
     "react-photo-album": "^2.1.0",
     "reading-time": "^1.5.0",
     "slugify": "^1.6.4",
-    "unist-util-visit": "^4.1.0"
+    "unist-util-visit": "^4.1.0",
+    "utterances-react-component": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

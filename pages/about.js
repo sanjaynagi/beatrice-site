@@ -13,11 +13,12 @@ const InterestsList = () => {
   return (
     <UnorderedList pl={6} spacing={2}>
       <ListItem>Music</ListItem>
-      <ListItem>The Great Outdoors (trail-running, camping, hiking, <strong>the all-trails app</strong>)</ListItem>
-      <ListItem>Sports (football, tennis, darts, cricket, <strong>the cricinfo app</strong>)</ListItem>
+      <ListItem>Piano</ListItem>
+      <ListItem>Art</ListItem>
+      <ListItem>Horticulture</ListItem>
       <ListItem>Meditation</ListItem>
-      <ListItem>Food</ListItem>
-      <ListItem>The Communal Human Spirit</ListItem>
+      <ListItem>The Outdoors (walking, exploring nature)</ListItem>
+      <ListItem>History</ListItem>
     </UnorderedList>
   );
 };
@@ -31,23 +32,31 @@ const AboutPage = () => {
           About Me
         </Heading>
         <Text>
-        Hello! I&apos;m Sanjay Curtis Nagi, currently a post-doc at the <Link href="https://www.lstmed.ac.uk/" color='teal'>
-          Liverpool School of Tropical Medicine</Link> in the Vector Informatics and Genomics group. 
+          Hello! I&apos;m Beatrice Rose Egid, a research consultant specialising in addressing complex questions in global health. 
+          My work focuses on themes of health equity, community engagement, social determinants of health, marginalisation, 
+          and multi-sectoral collaboration.
         </Text>
         <Text>
-        To date, my work has primarily focused on mosquito vectors of disease. In particular, the rapid evolution and spread of resistance 
-        in the major malaria vector, <em>Anopheles gambiae</em>, is a major focus, and how we can use population genomics to ultimately inform 
-        malaria control programmes. I enjoy developing open-source computational tools that can aid the community and empower researchers 
-        to analyse their own data.
+          I am passionate about participatory research approaches and centring community voices in health and social research. 
+          I am also the co-founder of the <Link href="https://connectingcitizenstoscience.podbean.com/" color="green.800">
+          ‘Connecting Citizens to Science’ podcast</Link>, which explores the intersection of science and community engagement.
         </Text>
-        <Text>In no particular order, I enjoy these a lot:</Text>
+        <Text>
+          My research uses both qualitative and quantitative methods, and I have experience working across diverse geographic 
+          contexts, including West Africa, South Asia, the Western Pacific, and the UK.
+        </Text>
+        {/* <Text>In no particular order, here are some of the things I enjoy:</Text>
 
-        <InterestsList></InterestsList>
-        
-        <Text>Feel free to explore some of the <InternalLink href="/software" color="teal" p="0">software tools</InternalLink> I&apos;ve developed, 
-        or <InternalLink href="/publications" color="teal" p="0">publications</InternalLink> I&apos;ve contributed to.
-        </Text>
-        <Image src="/runningmalawismall.png" alt="Running through an irrigation system in the Shire Valley, Chikwawa, Malawi." />
+        <InterestsList /> */}
+
+        {/* <Text>
+          Feel free to explore some of the <InternalLink href="/projects" color="green" p="0">projects</InternalLink> I&apos;ve worked on, 
+          or <InternalLink href="/publications" color="green" p="0">publications</InternalLink> I&apos;ve contributed to.
+        </Text> */}
+        {/* <Image 
+          src="/beatrice-outdoors.png" 
+          alt="Beatrice enjoying the outdoors." 
+        /> */}
         <ContactMe />
       </VStack>
     </>

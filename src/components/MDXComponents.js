@@ -86,10 +86,10 @@ const CodeHighlight = ({ children: codeString, className }) => {
     }
   };
 
-  // Custom theme with dark teal background and white text
+  // Custom theme with dark green background and white text
   const customTheme = {
     plain: {
-      backgroundColor: '#014d4e',  // Dark teal background
+      backgroundColor: '#014d4e',  // Dark green background
       color: '#ffffff'             // White text
     },
     styles: [
@@ -216,8 +216,8 @@ const CodeHighlight = ({ children: codeString, className }) => {
 const InlineCode = props => (
   <chakra.code
     apply="mdx.code"
-    color={useColorModeValue('teal.500', 'white.200')}
-    bg={useColorModeValue('teal.50', 'teal.700')}
+    color={useColorModeValue('green.500', 'white.200')}
+    bg={useColorModeValue('green.50', 'green.700')}
     px={1}
     py={0.5}
     rounded={{ base: 'none', md: 'md' }}
@@ -240,7 +240,7 @@ const LinkedHeading = props => {
       </Box>
       <chakra.span
         aria-label="anchor"
-        color="teal.500"
+        color="green.500"
         userSelect="none"
         fontWeight="normal"
         fontSize="1.5rem"
@@ -276,7 +276,7 @@ const Anchor = props => {
   const { colorMode } = useColorMode();
   return (
     <chakra.a
-      color={mode('teal.500', 'white.300')({ colorMode })}
+      color={mode('green.500', 'white.300')({ colorMode })}
       _hover={{ textDecoration: 'underline' }}
       {...props}
     />

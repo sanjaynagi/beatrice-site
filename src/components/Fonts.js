@@ -3,7 +3,7 @@ import { Global } from '@emotion/react';
 const Fonts = () => (
   <Global
     styles={`
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
 
     @font-face {
       font-family: 'Cal Sans';
@@ -14,7 +14,12 @@ const Fonts = () => (
       font-weight: 600;
       font-display: swap;
     }
+
+    body {
+      font-family: 'Lora', serif;
+    }
   `}
   />
 );
+
 export default Fonts;
