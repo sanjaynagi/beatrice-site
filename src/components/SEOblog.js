@@ -5,7 +5,6 @@ const author = 'Beatrice R Egid';
 const shortname = 'beatriceegid';
 const description =
   "I'm Beatrice R Egid. Researcher. Welcome to my blog!";
-const socialBanner = '/card.png';
 
 const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shorttitle }) => {
   let postUrl = `${siteURL}`;

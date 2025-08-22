@@ -53,10 +53,10 @@ const AboutPage = () => {
           Feel free to explore some of the <InternalLink href="/projects" color="green" p="0">projects</InternalLink> I&apos;ve worked on, 
           or <InternalLink href="/publications" color="green" p="0">publications</InternalLink> I&apos;ve contributed to.
         </Text> */}
-        <Image 
+        {/* <Image 
           src="/beatrice-outdoors.png" 
           alt="Beatrice enjoying the outdoors." 
-        />
+        /> */}
         <ContactMe />
       </VStack>
     </>

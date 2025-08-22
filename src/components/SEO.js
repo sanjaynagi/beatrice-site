@@ -5,7 +5,6 @@ const author = 'Beatrice R Egid';
 const shortname = 'beatriceegid';
 const description =
   "I'm Beatrice R Egid. Researcher. Welcome to my personal website and blog!";
-const socialBanner = '/card.png';
 
 const DocumentHead = ({ pageTitle, postPath, canonicalUrl }) => {
   let postUrl = `${siteURL}`;
@@ -46,8 +45,6 @@ const DocumentHead = ({ pageTitle, postPath, canonicalUrl }) => {
 
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteURL}${socialBanner}`} />
-      <meta property="og:image:alt" content="Site social banner" />
       <meta property="og:url" content={postPath ? postUrl : siteURL} />
       <meta property="og:type" content={postPath ? 'article' : 'website'} />
       <meta property="og:site_name" content="Sanjay C Nagi's personal site" />
