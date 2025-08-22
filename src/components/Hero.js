@@ -1,6 +1,6 @@
 import { Box, Stack, VStack, Heading, Text, HStack } from '@chakra-ui/react';
 import useBetterMediaQuery from './BetterMediaQuery';
-import HeroImage from "./HeroImage"
+import HeroImage from "./HeroImage";
 import ContactIcons from './ContactIcons';
 
 const Hero = () => {
@@ -23,38 +23,35 @@ const Hero = () => {
             justifyContent={{ base: 'space-between', md: 'flex-start' }}
             alignItems="center"
           >
-          {isMobile ? (
-            <VStack width="100%" justifyContent={'space-between'}>
-              <Heading size="lg" as="h1">
-                Hey, I&apos;m Sanjay
-              </Heading>     
-              <HeroImage />
-            </VStack>  
-          ) : (
-            <HStack width="100%" justifyContent={'space-between'}>
-              <Heading size="lg" as="h1">
-                 Hey, I&apos;m Sanjay
-              </Heading>     
-              <HeroImage />
-             </HStack>  
-            )
-          }
+            {isMobile ? (
+              <VStack width="100%" justifyContent={'space-between'}>
+                <Heading size="lg" as="h1">
+                  Beatrice Rose Egid.
+                </Heading>     
+                <HeroImage />
+              </VStack>  
+            ) : (
+              <HStack width="100%" justifyContent={'space-between'}>
+                <Heading size="lg" as="h1">
+                  Beatrice Rose Egid.
+                </Heading>     
+                <HeroImage />
+              </HStack>  
+            )}
           </Stack>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            I&apos;m a Post-Doc studying genomics of the major malaria mosquito, <em>Anopheles gambiae </em> 
-            at the Liverpool School of Tropical Medicine. 
+            I&apos;m a research consultant specialising in addressing complex questions in global health. 
+            My work focuses on health equity, community engagement, social determinants of health, 
+            marginalisation, and multi-sectoral collaboration.
           </Text>
           <Text lineHeight="175%" as="h2" fontSize="lg">
-            A major focus of my research is the rapid evolution and spread of resistance 
-            in the major malaria vector, and how we can use population genomics to 
-            ultimately inform malaria control programmes. I enjoy developing open-source 
-            computational tools that can aid the community and empower researchers to analyse 
-            their own data.
+            I am passionate about participatory research approaches and centring community voices in health and social research. 
+            I&apos;m also the co-founder of the <em>‘Connecting Citizens to Science’</em> podcast, which explores the intersection 
+            of science and community engagement.
           </Text>
         </VStack>
       </Stack>
       <ContactIcons />   
-
     </Box>
   );
 };

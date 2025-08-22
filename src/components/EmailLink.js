@@ -12,16 +12,11 @@ const validateText = (text) => {
 const messages = [
   'hello',
   'hola',
-  'namaste-ji',
   'you-can-email-me-with-literally-anything!-really',
   'well...not-anything-actually.But-most-things',
-  'like-eddie-howes-marching-mags',
-  'or-messi-is-the-greatest',
   'or-stuff-like',
   'please-work-for-us', 
   'i-really-like-your-website',
-  'and-i-like-paranthas-too',
-  'come-to-my-house-for-paranthas',
   'and',
   'have-a-wonderful-day!',
 ];
@@ -81,9 +76,9 @@ const EmailLink = ({ loopMessage }) => {
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={() => (idx < messages.length) && setIsActive(true)}
     >
-      <a href={validateText(message) ? `mailto:sanjay.c.nagi@gmail.com?subject=${message}` : ''}>
+      <a href={validateText(message) ? `mailto:beatrice.r.egid@gmail.com?subject=${message}` : ''}>
         <span>{message}</span>
-        <span>@sanjaycurtisnagi</span>
+        <span>@beatriceegid</span>
       </a>
     </div>
   );

@@ -20,7 +20,7 @@ const ProjectInfoCard = ({
   expoIcon,
   githubIcon
 }) => {
-  const bgColorStack = useColorModeValue('gray.200', 'teal.600');
+  const bgColorStack = useColorModeValue('gray.200', 'green.600');
   const iconColor = useColorModeValue('gray.700', 'white');
   return (
     <LinkBox as="article">

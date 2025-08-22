@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
-const siteURL = 'https://sanjaycnagi.com';
-const author = 'Sanjay Curtis Nagi';
-const shortname = 'sanjaycnagi';
+const siteURL = 'https://beatriceegid.com';
+const author = 'Beatrice R Egid';
+const shortname = 'beatriceegid';
 const description =
-  "I'm Sanjay Curtis Nagi. Researcher. Welcome to my blog!";
+  "I'm Beatrice R Egid. Researcher. Welcome to my blog!";
 const socialBanner = '/card.png';
 
 const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shorttitle }) => {
@@ -33,7 +33,7 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <meta name="publisher" content={author} />
       <meta
         name="keywords"
-        content="Sanjay Curtis Nagi, sanjaycnagi, genomics, malaria, blog, Next.js, React"
+        content="Beatrice R Egid, beatriceegid, genomics, malaria, blog, Next.js, React"
       />
 
       <meta name="robots" content="index,follow" />
@@ -53,12 +53,6 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <meta property="og:url" content={postPath ? postUrl : siteURL} />
       <meta property="og:type" content={postPath ? 'article' : 'website'} />
       <meta property="og:site_name" content="Sanjay's blog" />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={shortname} />
-      <meta name="twitter:title" content={shorttitle} />
-      <meta name="twitter:description" content={description} />
-      <meta property="twitter:image" content={`${siteURL}${thumbnail}`} />
     </Head>
   );
 };
