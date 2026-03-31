@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import { Box } from '@chakra-ui/react';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
+import { Box, Link, Text, VStack } from '@chakra-ui/react';
 
 const PdfViewer = () => {
   const url = '/CV_Beatrice_Egid_26.pdf';
-  const [width, setWidth] = useState(1200);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  pdfjs.GlobalWorkerOptions.workerSrc =
-    pdfjs.version === '2.9.359'
-      ? '//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.js'
-      : `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
   return (
-    <Box style={{ display: 'flex', flexDirection: 'row', gap: '0px' }}>
-      <Document file={url} className="d-flex justify-content-center">
-        <Page pageNumber={1} scale={width > 786 ? 1.35 : 0.58} renderAnnotationLayer={false} />
-        <Page pageNumber={2} scale={width > 786 ? 1.35 : 0.58} renderAnnotationLayer={false} />
-      </Document>
-    </Box>
+    <VStack w="full" spacing={4} alignItems="stretch">
+      <Box
+        as="iframe"
+        src={url}
+        title="Beatrice Egid CV"
+        w="full"
+        minH={{ base: '70vh', md: '1100px' }}
+        border="1px solid"
+        borderColor="brand.border"
+        borderRadius="24px"
+        bg="brand.surface"
+      />
+      <Text fontSize="sm" color="brand.accentMuted" textAlign="center">
+        If the PDF preview does not appear in your browser,{' '}
+        <Link href={url} isExternal>
+          open the CV directly
+        </Link>
+        .
+      </Text>
+    </VStack>
   );
 };
 
