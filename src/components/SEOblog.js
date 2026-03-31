@@ -1,16 +1,11 @@
 import Head from 'next/head';
-
-const siteURL = 'https://beatriceegid.com';
-const author = 'Beatrice R Egid';
-const shortname = 'beatriceegid';
-const description =
-  "I'm Beatrice R Egid. Researcher. Welcome to my blog!";
+import { siteMeta } from '../data/siteContent';
 
 const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shorttitle }) => {
-  let postUrl = `${siteURL}`;
+  let postUrl = siteMeta.siteUrl;
 
   if (postPath) {
-    postUrl = `${siteURL}${postPath}/`;
+    postUrl = `${siteMeta.siteUrl}${postPath}/`;
   }
 
   pageTitle = pageTitle.substring(0, 65);
@@ -21,18 +16,18 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       <link rel="icon" href="/favicon.ico" />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta content="#5fb0a1" name="theme-color" />
-      <meta content="#5fb0a1" name="msapplication-TileColor" />
-      <link rel="canonical" href={canonicalUrl} />
+      <meta content="#1f5a53" name="theme-color" />
+      <meta content="#1f5a53" name="msapplication-TileColor" />
+      <link rel="canonical" href={canonicalUrl || postUrl} />
 
       <link rel="apple-touch-icon" href="/favicon.ico" />
-      <meta content={description} name="description" />
-      <meta name="author" content={author} />
-      <meta name="author" content={shortname} />
-      <meta name="publisher" content={author} />
+      <meta content={siteMeta.description} name="description" />
+      <meta name="author" content={siteMeta.name} />
+      <meta name="author" content="beatriceegid" />
+      <meta name="publisher" content={siteMeta.name} />
       <meta
         name="keywords"
-        content="Beatrice R Egid, beatriceegid, genomics, malaria, blog, Next.js, React"
+        content="Beatrice R Egid, beatriceegid, global health, community engagement, health systems, research ethics"
       />
 
       <meta name="robots" content="index,follow" />
@@ -46,12 +41,12 @@ const BlogDocumentHead = ({ pageTitle, postPath, canonicalUrl, thumbnail, shortt
       />
 
       <meta property="og:title" content={shorttitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteURL}${thumbnail}`} />
+      <meta property="og:description" content={siteMeta.description} />
+      <meta property="og:image" content={`${siteMeta.siteUrl}${thumbnail}`} />
       <meta property="og:image:alt" content="Blog post thumbnail" />
-      <meta property="og:url" content={postPath ? postUrl : siteURL} />
+      <meta property="og:url" content={postPath ? postUrl : siteMeta.siteUrl} />
       <meta property="og:type" content={postPath ? 'article' : 'website'} />
-      <meta property="og:site_name" content="Sanjay's blog" />
+      <meta property="og:site_name" content="Beatrice R Egid" />
     </Head>
   );
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { DocumentHead } from '../src/components/';
 import PublicationCard from '../src/components/PublicationCard';
-import PosterCard from '../src/components/PosterCard';
 import {
   VStack,
   Heading,
@@ -10,57 +9,58 @@ import {
   Button,
   ButtonGroup,
   Divider,
-  SimpleGrid
+  SimpleGrid,
+  Box
 } from '@chakra-ui/react';
 import { FaGoogle, FaOrcid } from 'react-icons/fa';
-import { PublicationsList, PostersList } from '../src/data/publications';
+import { PublicationsList } from '../src/data/publications';
 
 const PublicationsPage = () => {
   return (
     <>
-      <DocumentHead pageTitle="Publications" postPath="/cv" />
-      <VStack spacing={4} as="section" pt={28}>
-        <Heading size="lg">Publications</Heading>
-        <ButtonGroup spacing={4}>
-          <Button
-            leftIcon={<FaGoogle />}
-            colorScheme="green"
-            size="lg"
-            variant="ghost"
-          >
-            <Link href="https://scholar.google.com/citations?user=kIRUwekAAAAJ&hl=en&oi=ao">
+      <DocumentHead pageTitle="Publications" postPath="/publications" />
+      <VStack spacing={10} as="section" pt={{ base: 24, md: 32 }} alignItems="stretch" w="full">
+        <VStack spacing={4} alignItems="center" textAlign="center" maxW="2xl" mx="auto">
+          <Heading size="lg">Publications</Heading>
+          <Text lineHeight="1.8" color="brand.accentMuted">
+            Selected publications, reports and research outputs. If you need access to any of the work below, please get in touch.
+          </Text>
+          <ButtonGroup spacing={4} flexWrap="wrap" justifyContent="center">
+            <Button
+              as={Link}
+              href="https://scholar.google.com/citations?user=kIRUwekAAAAJ&hl=en&oi=ao"
+              leftIcon={<FaGoogle />}
+              colorScheme="teal"
+              size="lg"
+              variant="ghost"
+            >
               Google Scholar
-            </Link>
-          </Button>
-          <Button
-            leftIcon={<FaOrcid />}
-            colorScheme="green"
-            size="lg"
-            variant="ghost"
-          >
-            <Link href="https://orcid.org/0000-0001-8206-8903">Orcid</Link>
-          </Button>
-        </ButtonGroup>
-        <Text pb="5">
-          If you need access to any of the below, please get in touch!
-        </Text>
-        <Divider />
-        
-        {/* Publications Section */}
-        <Heading size="md" pt={4}>Selected Publications</Heading>
-        <SimpleGrid columns={{ base: 1 }} spacing={6} w="full" pt={2}>
-          {PublicationsList.map((publication) => (
-            <PublicationCard key={publication.id} {...publication} />
-          ))}
-        </SimpleGrid>
+            </Button>
+            <Button
+              as={Link}
+              href="https://orcid.org/0000-0001-8206-8903"
+              leftIcon={<FaOrcid />}
+              colorScheme="teal"
+              size="lg"
+              variant="ghost"
+            >
+              Orcid
+            </Button>
+          </ButtonGroup>
+        </VStack>
 
-        {/* Posters Section */}
-        <Heading size="md" pt={8}>Posters</Heading>
-        <SimpleGrid columns={{ base: 1 }} spacing={6} w="full" pt={2}>
-          {PostersList.map((poster) => (
-            <PosterCard key={poster.id} {...poster} />
-          ))}
-        </SimpleGrid>
+        <Divider borderColor="brand.border" />
+
+        <Box>
+          <Heading size="md" pb={6}>
+            Selected Publications
+          </Heading>
+          <SimpleGrid columns={{ base: 1 }} spacing={6} w="full">
+            {PublicationsList.map((publication) => (
+              <PublicationCard key={publication.id} {...publication} />
+            ))}
+          </SimpleGrid>
+        </Box>
       </VStack>
     </>
   );

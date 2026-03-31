@@ -10,7 +10,6 @@ import {
   useColorModeValue,
   useMediaQuery
 } from '@chakra-ui/react';
-import dayjs from 'dayjs';
 
 import TimeToRead from './BlogPostPage/TimeToRead';
 import PublishedDate from './BlogPostPage/PublishedDate';

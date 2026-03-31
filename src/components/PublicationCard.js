@@ -7,7 +7,6 @@ import {
   LinkOverlay,
   Image,
   Badge,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import ExternalLink from './ExternalLink';
 
@@ -20,7 +19,6 @@ const PublicationCard = ({
   journalLogo,
   doi,
 }) => {
-  const bgColorStack = useColorModeValue('orange.50', 'green.300');
   const doiUrl = doi ? `https://doi.org/${doi}` : null;
 
   return (
@@ -29,13 +27,15 @@ const PublicationCard = ({
         direction={{ base: 'column', md: 'row' }}
         p={5}
         spacing={{ base: 8, md: 5 }}
-        bg={bgColorStack}
-        rounded="md"
+        bg="brand.surface"
+        border="1px solid"
+        borderColor="brand.border"
+        rounded="2xl"
         alignItems="center"
         transitionProperty="transform"
         transitionDuration="slow"
         transitionTimingFunction="ease-out"
-        _hover={{ transform: 'scale(1.025, 1.025)' }}
+        _hover={{ transform: 'translateY(-2px)' }}
       >
         {journalLogo && (
           <Image
@@ -60,7 +60,7 @@ const PublicationCard = ({
                   <LinkOverlay
                     as={ExternalLink}
                     href={doiUrl}
-                    color="gray.600"
+                    color="brand.text"
                     _hover={{ textDecoration: 'none' }}
                   >
                     {title}
@@ -71,13 +71,12 @@ const PublicationCard = ({
               </Heading>
             </Stack>
 
-            <Text fontSize="sm" color="gray.600" w="full">
+            <Text fontSize="sm" color="brand.accentMuted" w="full">
               {authors}
             </Text>
 
-            {/* Journal fallback as text line */}
             {!journalLogo && journal && (
-              <Text fontSize="xs" color="gray.500" w="full" fontStyle="italic">
+              <Text fontSize="xs" color="brand.accentMuted" w="full" fontStyle="italic">
                 {journal}
               </Text>
             )}
@@ -89,11 +88,11 @@ const PublicationCard = ({
               alignItems={{ base: 'flex-start', sm: 'center' }}
             >
               {doi && (
-                <Text fontSize="xs" color="gray.600">
+                <Text fontSize="xs" color="brand.accentMuted">
                   DOI: {doi}
                 </Text>
               )}
-              <Badge colorScheme="blue" variant="subtle">
+              <Badge colorScheme="teal" variant="subtle">
                 {year}
               </Badge>
             </Stack>

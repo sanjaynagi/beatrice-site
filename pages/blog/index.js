@@ -53,44 +53,18 @@ export const getStaticProps = async () => {
 };
 
 const Blog = ({ posts }) => {
-  const [displayPosts, setDisplayPosts] = useState(posts);
-
-  // const onSearch = () => {
-  //   console.log(event);
-  //   const query = event.currentTarget.value;
-
-  //   const filteredPosts = posts.filter(post =>
-  //     post.title.toLowerCase().includes(query)
-  //   );
-
-  //   setDisplayPosts(filteredPosts);
-  // };
+  const [displayPosts] = useState(posts);
 
   return (
     <>
       <DocumentHead pageTitle="Blog" postPath="/blog" />
-      <VStack spacing={3} alignItems="flex-start" w="full" as="section" pt={28}>
+      <VStack spacing={3} alignItems="flex-start" w="full" as="section" pt={{ base: 24, md: 32 }}>
         <Heading size="xl" as="h1">
           Blog
         </Heading>
-        <Text fontSize="xl">
-          Recent blog posts.
+        <Text fontSize="lg" lineHeight="1.8" maxW="2xl">
+          Occasional notes and updates. The site currently includes a single welcome post.
         </Text>
-        {/* <Text fontSize="xl">
-          In total I&#39;ve written <strong>{Object.keys(posts).length}</strong>{' '}
-          tutorials and posts.
-        </Text> */}
-        {/* <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <Icon as={HiOutlineSearch} color="gray.400" />
-          </InputLeftElement>
-          <Input
-            placeholder="Search a post by title, or topic..."
-            variant="filled"
-            onChange={onSearch}
-          />
-        </InputGroup> */}
-        {/* Common Tags cloud */}
       </VStack>
       <List spacing={1} w="full">
         {displayPosts.map(post => (

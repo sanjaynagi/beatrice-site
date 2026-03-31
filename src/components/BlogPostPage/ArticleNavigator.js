@@ -26,7 +26,7 @@ const ArticleNavigator = ({ previousArticle, nextArticle }) => {
             padding="8px 12px"
             alignItems="center"
           >
-            <NextLink href={previousArticle.slug}>
+            <NextLink href={`/blog/${previousArticle.slug}`}>
               <Link>
                 <Text as="h2" fontSize="md" fontWeight="600" color={textMode}>
                   ⬅️ Previous: {previousArticle.title}
@@ -43,7 +43,7 @@ const ArticleNavigator = ({ previousArticle, nextArticle }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <NextLink href={nextArticle.slug}>
+            <NextLink href={`/blog/${nextArticle.slug}`}>
               <Link>
                 <Text as="h2" fontSize="md" fontWeight="600" color={textMode}>
                   Next: {nextArticle.title} ➡️

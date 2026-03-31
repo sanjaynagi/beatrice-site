@@ -1,30 +1,7 @@
-import {
-  Alert,
-  Box,
-  chakra,
-  Link,
-  Kbd,
-  useColorModeValue,
-  useColorMode,
-  HStack,
-  Button,
-  useClipboard
-} from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
+import { Alert, Box, chakra, Kbd } from '@chakra-ui/react';
 import NextImage from 'next/image';
-import slugify from 'slugify';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import { IoClipboardOutline } from 'react-icons/io5';
+import { Highlight } from 'prism-react-renderer';
 import HTMLPlot from './HTMLPlot';
-import {
-  SiTypescript,
-  SiPython
-} from 'react-icons/si';
-
-const ChakraHighlight = chakra(Highlight, {
-  shouldForwardProp: prop =>
-    ['Prism', 'theme', 'code', 'language', 'children'].includes(prop)
-});
 
 const Pre = props => <chakra.div my="2em" borderRadius="sm" {...props} />;
 
@@ -36,7 +13,7 @@ const Table = props => (
 
 const THead = props => (
   <chakra.th
-    bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+    bg="brand.surface"
     fontWeight="semibold"
     p={2}
     fontSize="sm"
@@ -48,219 +25,103 @@ const TData = props => (
   <chakra.td
     p={2}
     borderTopWidth="1px"
-    borderColor="inherit"
+    borderColor="brand.border"
     fontSize="sm"
     whiteSpace="normal"
     {...props}
   />
 );
 
-const CopyButton = ({ value }) => {
-  const { onCopy, hasCopied } = useClipboard(value);
-  return (
-    <Button
-      color="white"
-      aria-label="Copy text"
-      textTransform="uppercase"
-      role="button"
-      onClick={onCopy}
-      fontSize="md"
-      mr={1}
-      p={1}
-      bgColor="#202020"
-    >
-      <IoClipboardOutline size={20} color="ffffff" />
-    </Button>
-  );
-};
-const CodeHighlight = ({ children: codeString, className }) => {
-  const language = className ? className.replace('language-', '') : 'text';
-  const showLanguage = () => {
-    switch (language) {
-      case 'typescript':
-        return <SiTypescript size={18} color="#ffffff" />;
-      case 'python':
-        return <SiPython size={18} color="#ffffff" />;
-      default:
-        break;
-    }
-  };
-
-  // Custom theme with dark green background and white text
-  const customTheme = {
-    plain: {
-      backgroundColor: '#014d4e',  // Dark green background
-      color: '#ffffff'             // White text
+const codeTheme = {
+  plain: {
+    backgroundColor: '#17322f',
+    color: '#f7f4ed'
+  },
+  styles: [
+    {
+      types: ['comment', 'prolog', 'doctype', 'cdata'],
+      style: { color: '#8fa8a2' }
     },
-    styles: [
-      {
-        types: ['comment', 'prolog', 'doctype', 'cdata'],
-        style: {
-          color: '#88A0A8'
-        }
-      },
-      {
-        types: ['namespace'],
-        style: {
-          opacity: 0.7
-        }
-      },
-      {
-        types: ['string', 'attr-value'],
-        style: {
-          color: '#9EEAF9'
-        }
-      },
-      {
-        types: ['punctuation', 'operator'],
-        style: {
-          color: '#E6E6E6'
-        }
-      },
-      {
-        types: ['entity', 'url', 'symbol', 'number', 'boolean', 'variable', 'constant', 'property', 'regex', 'inserted'],
-        style: {
-          color: '#85E89D'
-        }
-      },
-      {
-        types: ['atrule', 'keyword', 'attr-name', 'selector'],
-        style: {
-          color: '#FF8FA3'
-        }
-      },
-      {
-        types: ['function', 'deleted', 'tag'],
-        style: {
-          color: '#79C0FF'
-        }
-      },
-      {
-        types: ['function-variable'],
-        style: {
-          color: '#79C0FF'
-        }
-      },
-      {
-        types: ['tag', 'selector', 'keyword'],
-        style: {
-          color: '#FF8FA3'
-        }
-      }
-    ]
-  };
+    {
+      types: ['string', 'attr-value'],
+      style: { color: '#c7e5de' }
+    },
+    {
+      types: ['number', 'boolean', 'variable', 'constant', 'property'],
+      style: { color: '#f7cf9a' }
+    },
+    {
+      types: ['keyword', 'selector', 'attr-name'],
+      style: { color: '#c0f0de' }
+    },
+    {
+      types: ['function', 'tag'],
+      style: { color: '#9dd2cb' }
+    }
+  ]
+};
 
-  const lineNumberColor = 'whiteAlpha.500';
-  const preBackground = 'transparent'; // Changed to transparent to let theme background show
+const CodeHighlight = ({ children, className }) => {
+  const code = String(children || '').trimEnd();
+  const language = className ? className.replace('language-', '') : 'text';
   const showLineNumbers = !['shell', 'text'].includes(language);
 
   return (
-    <ChakraHighlight
-      {...defaultProps}
-      code={codeString}
-      language={language}
-      theme={customTheme}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => {
-        tokens.pop();
-        return (
-          <div data-language={className}>
-            <chakra.pre
-              className={className}
-              sx={{ ...style }}
-              overflowX="auto"
-              borderRadius="md"
-              p={2}
-              mx={-4}
-              fontSize="sm"
-            >
-              <HStack justifyContent="flex-end" pb={2}>
-                <CopyButton value={codeString.trim()} />
-                {showLanguage()}
-              </HStack>
-              {tokens.map((line, i) => {
-                const lineProps = getLineProps({ line, key: i });
-                return (
-                  <chakra.div {...lineProps} display="table-row" key={i}>
-                    {showLineNumbers && (
-                      <chakra.span
-                        w={8}
-                        display="table-cell"
-                        textAlign="right"
-                        userSelect="none"
-                        color={lineNumberColor}
-                        pr={3}
-                      >
-                        {i + 1}
-                      </chakra.span>
-                    )}
-                    {line.map((token, key) => {
-                      return (
-                        <chakra.span
-                          {...getTokenProps({ token, key })}
-                          key={`${i}.${key}`}
-                        />
-                      );
-                    })}
-                  </chakra.div>
-                );
-              })}
-            </chakra.pre>
-          </div>
-        );
-      }}
-    </ChakraHighlight>
+    <Highlight code={code} language={language} theme={codeTheme}>
+      {({ className: highlightClassName, style, tokens, getLineProps, getTokenProps }) => (
+        <chakra.pre
+          className={highlightClassName}
+          sx={{ ...style }}
+          overflowX="auto"
+          borderRadius="xl"
+          p={4}
+          fontSize="sm"
+        >
+          {tokens.map((line, index) => {
+            const lineProps = getLineProps({ line, key: index });
+            return (
+              <chakra.div {...lineProps} key={index} display="table-row">
+                {showLineNumbers && (
+                  <chakra.span
+                    display="table-cell"
+                    pr={4}
+                    color="#8fa8a2"
+                    userSelect="none"
+                  >
+                    {index + 1}
+                  </chakra.span>
+                )}
+                {line.map((token, tokenIndex) => (
+                  <chakra.span
+                    {...getTokenProps({ token, key: tokenIndex })}
+                    key={`${index}.${tokenIndex}`}
+                  />
+                ))}
+              </chakra.div>
+            );
+          })}
+        </chakra.pre>
+      )}
+    </Highlight>
   );
 };
 
 const InlineCode = props => (
   <chakra.code
-    apply="mdx.code"
-    color={useColorModeValue('green.500', 'white.200')}
-    bg={useColorModeValue('green.50', 'green.700')}
+    color="brand.accent"
+    bg="brand.surface"
     px={1}
     py={0.5}
-    rounded={{ base: 'none', md: 'md' }}
+    rounded="md"
     {...props}
   />
 );
 
-const LinkedHeading = props => {
-  const slug = slugify(toString(props.children, { lower: true }));
-  return (
-    <Link href={`#${slug}`} name={slug} role="group">
-      <Box
-        {...props}
-        display="inline"
-        fontFamily="heading"
-        color={useColorModeValue('gray.700', 'white')}
-        fontSize="3xl"
-      >
-        {props.children}
-      </Box>
-      <chakra.span
-        aria-label="anchor"
-        color="green.500"
-        userSelect="none"
-        fontWeight="normal"
-        fontSize="1.5rem"
-        outline="none"
-        _focus={{ opacity: 1, boxShadow: 'outline' }}
-        opacity={0}
-        _groupHover={{ opacity: 1 }}
-        ml="0.35rem"
-      >
-        🔗
-      </chakra.span>
-    </Link>
-  );
-};
-
 const Image = props => {
   if (!props.blurDataURL) {
-    // eslint-disable-next-line
-    return <img src={props.src} width={300} height={300} />;
+    return <img src={props.src} alt={props.alt || ''} width={props.width || 300} height={props.height || 300} />;
   }
+
   return (
     <NextImage
       {...props}
@@ -272,25 +133,22 @@ const Image = props => {
   );
 };
 
-const Anchor = props => {
-  const { colorMode } = useColorMode();
-  return (
-    <chakra.a
-      color={mode('green.500', 'white.300')({ colorMode })}
-      _hover={{ textDecoration: 'underline' }}
-      {...props}
-    />
-  );
-};
+const Anchor = props => (
+  <chakra.a
+    color="brand.accent"
+    _hover={{ textDecoration: 'underline', color: 'brand.accentMuted' }}
+    {...props}
+  />
+);
 
 const MDXComponents = {
   code: CodeHighlight,
   inlineCode: InlineCode,
-  h1: props => <LinkedHeading as="h1" apply="mdx.h1" {...props} />,
-  h2: props => <LinkedHeading as="h2" apply="mdx.h2" {...props} />,
-  h3: props => <LinkedHeading as="h3" apply="mdx.h3" {...props} />,
-  h4: props => <LinkedHeading as="h4" apply="mdx.h4" {...props} />,
-  hr: props => <chakra.hr apply="mdx.hr" {...props} />,
+  h1: props => <chakra.h1 fontSize="3xl" fontWeight="600" mb={4} {...props} />,
+  h2: props => <chakra.h2 fontSize="2xl" fontWeight="600" mb={4} {...props} />,
+  h3: props => <chakra.h3 fontSize="xl" fontWeight="600" mb={3} {...props} />,
+  h4: props => <chakra.h4 fontSize="lg" fontWeight="600" mb={3} {...props} />,
+  hr: props => <chakra.hr borderColor="brand.border" my={8} {...props} />,
   strong: props => <Box as="strong" fontWeight="semibold" {...props} />,
   pre: Pre,
   kbd: Kbd,
@@ -306,10 +164,10 @@ const MDXComponents = {
   th: THead,
   td: TData,
   a: Anchor,
-  p: props => <chakra.p apply="mdx.p" fontSize="lg" {...props} />,
-  ul: props => <chakra.ul px={{ base: 4, md: 8 }} apply="mdx.ul" {...props} />,
-  ol: props => <chakra.ol apply="mdx.ul" {...props} />,
-  li: props => <chakra.li pb="4px" fontSize="lg" {...props} />,
+  p: props => <chakra.p fontSize="lg" lineHeight="1.9" mb={4} {...props} />,
+  ul: props => <chakra.ul px={{ base: 4, md: 8 }} mb={4} {...props} />,
+  ol: props => <chakra.ol px={{ base: 4, md: 8 }} mb={4} {...props} />,
+  li: props => <chakra.li pb="4px" fontSize="lg" lineHeight="1.8" {...props} />,
   blockquote: props => (
     <Box>
       <Alert
@@ -324,7 +182,7 @@ const MDXComponents = {
       />
     </Box>
   ),
-  HTMLPlot,
+  HTMLPlot
 };
 
 export default MDXComponents;

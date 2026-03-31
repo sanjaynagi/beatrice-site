@@ -2,95 +2,81 @@ import {
   Container,
   Box,
   Stack,
-  Flex,
-  Divider,
-  useColorModeValue,
   Text,
-  useMediaQuery,
 } from '@chakra-ui/react';
 
 import InternalLink from './InternalLink';
-import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = props => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#5c5e5b')}
-      css={{ backdropFilter: 'blur(10px)' }}
-      zIndex={1}
+      bg="#f7f4ede6"
+      borderBottom="1px solid"
+      borderColor="brand.border"
+      css={{ backdropFilter: 'blur(14px)' }}
+      zIndex={10}
       {...props}
     >
       <Container
         display="flex"
-        p={2}
-        maxW="container.lg"
+        flexDirection={{ base: 'column', md: 'row' }}
+        py={{ base: 3, md: 4 }}
+        maxW="container.xl"
+        px={{ base: 6, md: 12, lg: 16 }}
         wrap="wrap"
         as="nav"
-        align="center"
+        align={{ base: 'flex-start', md: 'center' }}
         justify="space-between"
+        minH={{ md: '72px' }}
       >
-        {/* Adjust Flex alignment and add margin */}
-        <Flex align="center" ml={{ base: 2, md: 8 }}>
-          <InternalLink href="/" height="%50">
+        <Box
+          display="flex"
+          alignItems="center"
+          minH={{ md: '44px' }}
+          mr={{ md: 12, lg: 16 }}
+        >
+          <InternalLink href="/" px={0}>
             <Text
-              fontSize={{ base: '0px', md: '22px' }}
-              fontWeight={{ base: '0', md: '600' }}
-              sx={{
-                background:
-                  'linear-gradient(45deg, #124a28, #bcd3b1ff 30%, #ffffff 60%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundSize: '800%',
-              }}
+              fontSize={{ base: '2xl', md: '1.35rem' }}
+              fontWeight="600"
+              color="brand.text"
+              lineHeight="1"
+              letterSpacing="-0.02em"
             >
               Beatrice R Egid
             </Text>
           </InternalLink>
-        </Flex>
-
-        {isMobile ? (
-          <Stack
-            direction={{ base: 'row', md: 'row' }}
-            display={{ base: 'row', md: 'flex' }}
-            width={{ base: 'full', md: 'auto' }}
-            alignItems="center"
-            flexGrow={1}
-            mt={{ base: 4, md: 0 }}
-          >
-            <InternalLink href="/about" fontSize="md">
-              About
-            </InternalLink>
-            <InternalLink href="/blog" fontSize="md">
-              Blog
-            </InternalLink>
-            <InternalLink href="/publications" fontSize="md">
-              Publications
-            </InternalLink>
-          </Stack>
-        ) : (
-          <Stack
-            direction={{ base: 'row', md: 'row' }}
-            display={{ base: 'row', md: 'flex' }}
-            width={{ base: 'full', md: 'auto' }}
-            alignItems="center"
-            flexGrow={1}
-            mt={{ base: 4, md: 0 }}
-          >
-            <Divider orientation="vertical" ml="3" />
-            <InternalLink href="/about">About</InternalLink>
-            <InternalLink href="/blog">Blog</InternalLink>
-            <InternalLink href="/cv">CV</InternalLink>
-            <InternalLink href="/publications">Publications</InternalLink>
-          </Stack>
-        )}
-        {/* Adjust Box alignment */}
-        <Box flex={1} align="right" mr={{ base: 2, md: 4 }}>
-          <ThemeToggleButton />
         </Box>
+        <Stack
+          direction="row"
+          spacing={{ base: 1, md: 0 }}
+          width={{ base: 'full', md: 'auto' }}
+          alignItems="center"
+          justifyContent={{ base: 'flex-start', md: 'flex-end' }}
+          flexWrap="wrap"
+          mt={{ base: 3, md: 0 }}
+          pt={{ base: 2, md: 0 }}
+          borderTop={{ base: '1px solid', md: 'none' }}
+          borderColor="brand.border"
+          fontSize={{ base: 'sm', md: '0.96rem' }}
+          lineHeight="1"
+        >
+          <InternalLink href="/about" py={2} px={{ base: 0, md: 3 }}>
+            About
+          </InternalLink>
+          <InternalLink href="/services" py={2} px={{ base: 0, md: 3 }}>
+            Services
+          </InternalLink>
+          <InternalLink href="/publications" py={2} px={{ base: 0, md: 3 }}>
+            Publications
+          </InternalLink>
+          <InternalLink href="/cv" py={2} px={{ base: 0, md: 3 }}>
+            CV
+          </InternalLink>
+        </Stack>
       </Container>
     </Box>
   );

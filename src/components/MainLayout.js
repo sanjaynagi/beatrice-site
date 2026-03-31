@@ -1,20 +1,26 @@
 import { Box, Container, VStack } from '@chakra-ui/react';
 import { Analytics } from '@vercel/analytics/react';
 
-import PropTypes from 'prop-types';
-
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 const MainLayout = ({ children }) => {
   return (
-    <Box as="main" pb={8}>
+    <Box
+      as="main"
+      pb={8}
+      bg="brand.background"
+      backgroundImage="
+        radial-gradient(circle at top left, rgba(176, 199, 193, 0.26), transparent 34%),
+        radial-gradient(circle at top right, rgba(223, 212, 195, 0.34), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0))
+      "
+    >
       <Navbar />
-      {/* <Sidebar /> */}
       <Container
-        maxW="container.md"
+        maxW="container.xl"
         minH={{ base: 'auto', md: '100vh' }}
-        px={{ base: 4, lg: 0 }}
+        px={{ base: 6, md: 12, lg: 16 }}
       >
         <VStack spacing={16} flex={1} w="full" as="main" mb={16}>
           {children}
@@ -24,23 +30,6 @@ const MainLayout = ({ children }) => {
       </Container>
     </Box>
   );
-};
-
-MainLayout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-  fullPage: PropTypes.bool,
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
-
-MainLayout.defaultProps = {
-  children: null,
-  fullPage: false,
-  title: null,
-  description: "Beatrice R Egid's personal website.",
 };
 
 export default MainLayout;

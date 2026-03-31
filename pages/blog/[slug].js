@@ -1,16 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { MDXRemote } from 'next-mdx-remote';
-import { useRouter } from 'next/router';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
-import {
-  VStack,
-  Heading,
-  HStack,
-  Text,
-  Divider,
-  Center
-} from '@chakra-ui/react';
+import { VStack, Heading, HStack, Text, Divider } from '@chakra-ui/react';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -19,13 +11,7 @@ import readingTime from 'reading-time';
 import { getAllBlogPosts } from './index';
 import { BlogDocumentHead, MDXComponents } from '../../src/components';
 import imageMetadata from '../../src/utils/imageMetaData';
-import {
-  ShareArticle,
-  ArticleNavigator,
-  TimeToRead,
-  PublishedDate,
-  Tag,
-} from '../../src/components/BlogPostPage';
+import { ArticleNavigator, TimeToRead, PublishedDate, Tag } from '../../src/components/BlogPostPage';
 
 export const readBlogPost = async (slug) => {
   const mdPath = path.join(process.cwd(), './content/posts', `${slug}.md`);
@@ -87,12 +73,10 @@ const BlogPostPage = ({
   tag,
   thumbnail,
   shorttitle,
+  slug,
   allPosts,
   canonicalUrl
 }) => {
-  const { query } = useRouter();
-  const slug = query.slug;
-
   const postIndex = allPosts.findIndex(post => post.slug === slug);
   const previousArticle = allPosts[postIndex - 1] || null;
   const nextArticle = allPosts[postIndex + 1] || null;
@@ -106,11 +90,9 @@ const BlogPostPage = ({
         thumbnail={thumbnail}
         shorttitle={shorttitle}
       />
-      <VStack spacing={8} alignItems="stetch" w="full" as="section" pt={28}>
+      <VStack spacing={8} alignItems="stretch" w="full" as="section" pt={{ base: 24, md: 32 }}>
         <VStack spacing={3} alignItems="flex-start">
-          {/* Post Title */}
           <Heading size="lg">{title}</Heading>
-          {/* Post Meta */}
           <HStack
             divider={
               <Text color="gray.500" mx={2}>
@@ -118,25 +100,17 @@ const BlogPostPage = ({
               </Text>
             }
           >
-            {/* Published Date */}
             <PublishedDate date={date} />
-            {/* Time to read */}
             <TimeToRead timeToRead={timeToRead} />
-            {/* Tag */}
             <Tag tag={tag} />
           </HStack>
         </VStack>
-        <Center>
-        </Center>
         <MDXRemote {...source} components={MDXComponents} />
         <Divider />
-        {/* Article Navigator */}
         <ArticleNavigator
           previousArticle={previousArticle}
           nextArticle={nextArticle}
         />
-        {/* Author Card */}
-        {/* <AuthorCard /> */}
       </VStack>
     </>
   );

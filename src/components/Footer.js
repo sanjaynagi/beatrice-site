@@ -1,34 +1,26 @@
-import {
-  Stack,
-  VStack,
-  Divider,
-  Link,
-  Center,
-  useColorModeValue,
-  useMediaQuery
-} from '@chakra-ui/react';
+import { Stack, VStack, Divider, Text } from '@chakra-ui/react';
 
 import InternalLink from './InternalLink';
-import ContactIcons from './ContactIcons';
+import { siteMeta } from '../data/siteContent';
 
 const Footer = () => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
-  const linkColor = useColorModeValue('gray.600', 'white');
-  const textMode = useColorModeValue('gray.500', 'gray.500');
-
   return (
-    <VStack pb={8} as="footer" alignItems="center">
-      <Divider />
-
+    <VStack pb={8} as="footer" alignItems="center" w="full">
+      <Divider borderColor="brand.border" />
       <Stack
         w="full"
         direction={{ base: 'column', md: 'row' }}
         alignItems="center"
         justifyContent={{ base: 'center', md: 'space-between' }}
+        spacing={2}
       >
-      <ContactIcons />
+        <Text fontSize="sm" color="brand.accentMuted">
+          {siteMeta.email}
+        </Text>
+        <InternalLink href="/" color="brand.accentMuted" fontSize="sm">
+          Home
+        </InternalLink>
       </Stack>
-      <Center><InternalLink href="/" color='grey' fontSize="14px">Home</InternalLink></Center>
     </VStack>
   );
 };
