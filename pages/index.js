@@ -42,7 +42,7 @@ const HomePage = () => {
           </Heading>
           <Text lineHeight="1.8">{servicesIntro}</Text>
           <Text lineHeight="1.9" color="brand.accentMuted">
-            {services.slice(0, 4).join(' • ')}
+            {services.slice(0, 4).map(s => typeof s === 'string' ? s : s.label).join(' • ')}
           </Text>
           <InternalLink href="/services" px={0} fontWeight="600">
             View consultancy services
