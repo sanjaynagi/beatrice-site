@@ -7,7 +7,7 @@ import {
   ListItem
 } from '@chakra-ui/react';
 import { DocumentHead, ContactMe } from '../src/components';
-import { aboutParagraphs, focusAreas } from '../src/data/siteContent';
+import { aboutParagraphs, focusAreas, podcastUrl } from '../src/data/siteContent';
 
 const AboutPage = () => {
   return (
@@ -17,18 +17,25 @@ const AboutPage = () => {
         <Heading size="lg" as="h1">
           About
         </Heading>
-        {aboutParagraphs.slice(0, 4).map((paragraph) => (
+        {aboutParagraphs.slice(0, 2).map((paragraph) => (
           <Text key={paragraph} lineHeight="1.9" maxW="3xl">
             {paragraph}
           </Text>
         ))}
         <Text lineHeight="1.9" maxW="3xl">
-          I am also the co-founder of the{' '}
-          <Link href="https://connectingcitizenstoscience.podbean.com/" color="brand.accent">
-            Connecting Citizens to Science
-          </Link>{' '}
-          podcast, which explores the intersection of science and community engagement.
+          Communicating complex ideas to different audiences is one of my greatest strengths, and I
+          have worked on research, evaluation and policy projects across a diverse range of settings
+          in West Africa, South Asia, the Western Pacific and the UK. I am the co-founder of{' '}
+          <Link href={podcastUrl} color="brand.accent" isExternal>
+            &ldquo;Connecting Citizens to Science&rdquo;
+          </Link>
+          , a podcast exploring community engagement in health and social research.
         </Text>
+        {aboutParagraphs.slice(3, 4).map((paragraph) => (
+          <Text key={paragraph} lineHeight="1.9" maxW="3xl">
+            {paragraph}
+          </Text>
+        ))}
         <Text lineHeight="1.9">Key thematic areas include:</Text>
         <UnorderedList pl={6} spacing={2}>
           {focusAreas.map((item) => (

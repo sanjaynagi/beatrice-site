@@ -14,9 +14,20 @@ const ServicesPage = () => {
           {servicesIntro}
         </Text>
         <UnorderedList pl={6} spacing={3} maxW="3xl">
-          {services.map((service) => (
-            <ListItem key={service}>{service}</ListItem>
-          ))}
+          {services.map((service) =>
+            typeof service === 'string' ? (
+              <ListItem key={service}>{service}</ListItem>
+            ) : (
+              <ListItem key={service.label}>
+                {service.label}
+                <UnorderedList pl={4} mt={1} spacing={1}>
+                  {service.subItems.map((sub) => (
+                    <ListItem key={sub}>{sub}</ListItem>
+                  ))}
+                </UnorderedList>
+              </ListItem>
+            )
+          )}
         </UnorderedList>
         <ContactMe />
       </VStack>

@@ -44,14 +44,6 @@ const Hero = () => {
           justifyContent="center"
           order={{ base: 2, md: 1 }}
         >
-          <Heading
-            as="h1"
-            fontSize={{ base: '3.35rem', md: '5.4rem' }}
-            lineHeight={{ base: 0.94, md: 0.92 }}
-            maxW="8ch"
-          >
-            Bea
-          </Heading>
           <Text fontSize={{ base: 'xl', md: '2xl' }} lineHeight="1.7" maxW="20ch">
             {heroIntro}
           </Text>
