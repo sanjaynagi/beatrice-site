@@ -20,7 +20,7 @@ const ServicesPage = () => {
             ) : (
               <ListItem key={service.label}>
                 {service.label}
-                <UnorderedList pl={4} mt={1} spacing={1}>
+                <UnorderedList pl={4} mt={1} spacing={1} styleType="circle">
                   {service.subItems.map((sub) => (
                     <ListItem key={sub}>{sub}</ListItem>
                   ))}

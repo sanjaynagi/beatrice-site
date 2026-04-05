@@ -20,18 +20,6 @@ const Hero = () => {
           order={{ base: 1, md: 2 }}
           position="relative"
         >
-          <Box
-            position="absolute"
-            inset={{ base: '-16px -8px auto auto', md: '-18px -18px auto auto' }}
-            w={{ base: '78vw', md: '340px' }}
-            h={{ base: 'calc(78vw * 1.25)', md: '425px' }}
-            maxW="340px"
-            maxH="425px"
-            border="1px solid"
-            borderColor="rgba(31, 90, 83, 0.18)"
-            borderRadius="32px"
-            zIndex={0}
-          />
           <Box position="relative" zIndex={1}>
             <HeroImage />
           </Box>
@@ -40,18 +28,18 @@ const Hero = () => {
           spacing={6}
           alignItems="flex-start"
           w="full"
-          maxW={{ base: '100%', md: '620px' }}
+          maxW={{ base: '100%', md: '780px' }}
           justifyContent="center"
           order={{ base: 2, md: 1 }}
         >
-          <Text fontSize={{ base: 'xl', md: '2xl' }} lineHeight="1.7" maxW="20ch">
+          <Text fontSize={{ base: 'xl', md: '2xl' }} lineHeight="1.7" maxW="30ch">
             {heroIntro}
           </Text>
           <Text
             fontSize={{ base: 'lg', md: 'xl' }}
             lineHeight="1.8"
             color="brand.accentMuted"
-            maxW="26ch"
+            maxW="36ch"
           >
             {heroBody}
           </Text>
