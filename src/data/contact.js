@@ -11,7 +11,7 @@ const data = [
     icon: faGithub,
   },
   {
-    link: 'https://www.linkedin.com/in/beatrice-egid',
+    link: 'https://www.linkedin.com/in/beatrice-egid/',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },

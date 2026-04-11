@@ -23,7 +23,7 @@ const AboutPage = () => {
           </Text>
         ))}
         <Text lineHeight="1.9" maxW="3xl">
-          Communicating complex ideas to different audiences is one of my greatest strengths, and I
+          Communicating complex ideas to different audiences is one of my greatest passions, and I
           have worked on research, evaluation and policy projects across a diverse range of settings
           in West Africa, South Asia, the Western Pacific and the UK. I am the co-founder of{' '}
           <Link href={podcastUrl} color="brand.accent" isExternal>
@@ -36,7 +36,7 @@ const AboutPage = () => {
             {paragraph}
           </Text>
         ))}
-        <Text lineHeight="1.9">Key thematic areas include:</Text>
+        <Text lineHeight="1.9">My key areas of interest and experience include:</Text>
         <UnorderedList pl={6} spacing={2}>
           {focusAreas.map((item) => (
             <ListItem key={item}>{item}</ListItem>
